@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f0e4">
+<title>BuglonWiki — Ensiklopedia Terbuka · bawapi-katak</title>
+<link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/qrcode.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <!-- SIDEBAR (ala Wikipedia) -->
+  <aside id="sidebar">
+    <div class="brand">
+      <svg width="44" height="44" viewBox="0 0 200 200" role="img" aria-label="Buglon"><circle cx="100" cy="100" r="80" fill="#2b241d"/><path d="M82 62a18 18 0 1 1-18 18" fill="none" stroke="#a8442a" stroke-width="9" stroke-linecap="round"/><circle cx="70" cy="88" r="7" fill="#a8442a"/><circle cx="118" cy="88" r="7" fill="#a8442a"/><path d="M60 122c18-26 58-26 76 0" fill="none" stroke="#a8442a" stroke-width="7" stroke-linecap="round"/></svg>
+      <div class="wm">Buglon<span>WIKI</span></div>
+    </div>
+    <p class="tagline">Ensiklopedia<br>terbuka · bebas</p>
+    <nav>
+      <button id="navBeranda" class="navlink active">Beranda</button>
+      <button id="navTentang" class="navlink">Tentang BuglonWiki</button>
+    </nav>
+    <div class="side-sec">
+      <h4>Bagikan ke teman</h4>
+      <p class="muted">Scan ini pakai kamera HP kamu, lalu pasangkan appnya.</p>
+      <button class="btn-primary" id="openQr">Tampilkan QR</button>
+    </div>
+    <div class="side-foot">
+      Versi 1.0 · bawapi-katak
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div id="main">
+    <header id="topbar">
+      <h1 class="top-title">Buglon<span>Wiki</span></h1>
+      <div class="search-wrap">
+        <input id="q" placeholder="Cari artikel…" autocomplete="off" aria-label="Cari">
+        <button id="searchBtn">Cari</button>
+      </div>
+      <div id="suggest" class="hidden"></div>
+    </header>
+
+    <main id="result" aria-live="polite"></main>
+  </div>
+</div>
+
+<!-- QR MODAL -->
+<div id="qrModal" class="hidden" role="dialog" aria-modal="true" aria-label="QR BuglonWiki">
+  <div class="modal-inner">
+    <button class="modal-close" id="closeQr" aria-label="Tutup">✕</button>
+    <h3>Bagikan BuglonWiki</h3>
+    <canvas id="qrCanvas" width="220" height="220"></canvas>
+    <p class="muted">Arahkan kamera HP — alamat app akan terbuka di browser.<br>Di sana bisa “Add to Home Screen” (dipasang).</p>
+    <button class="btn-primary" id="downloadQr">Download QR</button>
+  </div>
+</div>
+
+<!-- TENTANG MODAL -->
+<div id="aboutModal" class="hidden" role="dialog" aria-modal="true" aria-label="Tentang">
+  <div class="modal-inner">
+    <button class="modal-close" id="closeAbout" aria-label="Tutup">✕</button>
+    <h3>Tentang BuglonWiki</h3>
+    <p class="muted">BuglonWiki adalah baca-ensiklopedia gratis:<br>
+      sumber: Wikipedia + Wikimedia Commons (CC BY-SA) &amp; OpenAlex.<br>
+      Tidak menyimpan data kamu di server — semuanya berjalan di perangkat kamu.<br>
+      Publisher: bawapi-katak</p>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
