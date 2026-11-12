@@ -73,7 +73,30 @@ nav{display:flex;flex-direction:column;gap:2px;margin-bottom:22px}
 .fade-in{animation:fadeUp .4s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-/* ============ MODAL ============ */
+/* ============ RESPONSIVE HP ============ */
+@media (max-width: 860px){
+  #app{flex-direction:column}
+  #sidebar{width:100%;flex-direction:row;align-items:center;gap:10px;padding:10px 12px;border-right:none;border-bottom:1px solid var(--line)}
+  .brand svg{width:32px !important;height:32px !important}
+  .wm{font-size:17px}
+  .tagline,.side-foot{display:none}
+  nav{flex-direction:row;gap:6px;margin:0;flex:1;justify-content:center}
+  .navlink{padding:8px 10px;font-size:13px}
+  .side-sec{border:0;padding:0;margin:0}
+  .side-sec h4,.side-sec .muted,#openQr{display:none}
+  #topbar{padding:14px 12px 12px;text-align:left}
+  .top-title{font-size:24px}
+  .search-wrap{margin-top:10px;gap:6px}
+  #q{padding:10px 12px;font-size:14px}
+  #searchBtn{padding:0 14px;font-size:13px}
+  #result{padding:14px 10px 40px}
+  .art-layout{grid-template-columns:1fr !important;gap:12px}
+  .art-img{min-height:160px}
+  .art-img img{max-height:220px}
+  .art-body h2{font-size:22px}
+  .gallery{grid-template-columns:repeat(auto-fill,minmax(72px,1fr))}
+  .gallery img{height:66px}
+}
 #qrModal,#aboutModal{position:fixed;inset:0;background:rgba(20,18,12,.75);display:flex;align-items:center;justify-content:center;z-index:20}
 .modal-inner{position:relative;background:var(--card);border:2px solid var(--gold);border-radius:14px;padding:28px;text-align:center;max-width:380px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
 .modal-inner h3{color:var(--brick);margin-bottom:14px;font-size:20px}
