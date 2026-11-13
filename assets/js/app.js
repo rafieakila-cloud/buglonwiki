@@ -1,4 +1,4 @@
-/* BuglonWiki — Ensiklopedi terbuka Indonesia · bawapi-katak */
+﻿/* BuglonWiki â€” Ensiklopedi terbuka Indonesia Â· bawapi-katak */
 'use strict';
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -62,15 +62,15 @@ function renderArticle(sum, alex, commons, query) {
           <div class="kicker">Ringkasan Wikipedia</div>
           <h2>${escapeHTML(title)}</h2>
           <p>${extract}</p>
-          <a class="read-btn" href="${wikiLink}" target="_blank" rel="noopener">Lanjutkan di Wikipedia →</a>
+          <a class="read-btn" href="${wikiLink}" target="_blank" rel="noopener">Lanjutkan di Wikipedia â†’</a>
         </div>
       </article>
       <aside>
         <div class="side-panel">
           <h3>Makalah Ilmiah (OpenAlex)</h3>
-          ${works.length ? works.map(w => `<div class="work-item"><b>${escapeHTML((w.title||'Karya').split('.')[0])}</b><small>${(w.authorships||[]).slice(0,2).map(a=>a.author&&a.author.display_name).filter(Boolean).join(', ')||'Tidak diketahui'}</small><a href="${w.doi?('https://doi.org/'+w.doi):(w.id||'#')}" target="_blank" rel="noopener">DOI →</a></div>`).join('') : '<div class="muted">Tidak ada karya terkait.</div>'}
+          ${works.length ? works.map(w => `<div class="work-item"><b>${escapeHTML((w.title||'Karya').split('.')[0])}</b><small>${(w.authorships||[]).slice(0,2).map(a=>a.author&&a.author.display_name).filter(Boolean).join(', ')||'Tidak diketahui'}</small><a href="${w.doi?('https://doi.org/'+w.doi):(w.id||'#')}" target="_blank" rel="noopener">DOI â†’</a></div>`).join('') : '<div class="muted">Tidak ada karya terkait.</div>'}
         </div>
-        ${images.length ? `<div class="side-panel"><h3>Gambar — Wikimedia Commons</h3><div class="gallery">${images.map(u => `<img loading="lazy" src="${u}" alt="${escapeHTML(title)}">`).join('')}</div></div>` : ''}
+        ${images.length ? `<div class="side-panel"><h3>Gambar â€” Wikimedia Commons</h3><div class="gallery">${images.map(u => `<img loading="lazy" src="${u}" alt="${escapeHTML(title)}">`).join('')}</div></div>` : ''}
       </aside>
     </div>`;
 }
@@ -79,8 +79,8 @@ function renderArticle(sum, alex, commons, query) {
 function showBeranda() {
   resultsEl.innerHTML = `
     <div class="fade-in" style="max-width:760px;margin:40px auto;text-align:center">
-      <p style="font-size:19px;color:var(--dim)">Ketik sesuatu di kolom pencarian di atas — lalu artikel akan masuk ke sini.</p>
-      <p style="margin-top:18px" class="muted">Contoh: <em>"Dinosaur"</em> · <em>"Einstein"</em> · <em>"Pythagoras"</em> · <em>"Bunga Matahari"</em></p>
+      <p style="font-size:19px;color:var(--dim)">Ketik sesuatu di kolom pencarian di atas â€” lalu artikel akan masuk ke sini.</p>
+      <p style="margin-top:18px" class="muted">Contoh: <em>"Dinosaur"</em> Â· <em>"Einstein"</em> Â· <em>"Pythagoras"</em> Â· <em>"Bunga Matahari"</em></p>
     </div>`;
 }
 
@@ -142,3 +142,6 @@ qInput.addEventListener('keydown', e => { if (e.key === 'Enter') { suggestEl.cla
 $('#searchBtn').addEventListener('click', () => { suggestEl.classList.add('hidden'); searchArticle(qInput.value); });
 
 showBeranda();
+
+try { if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js'); } } catch (e) {}
+
