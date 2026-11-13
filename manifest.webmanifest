@@ -1,12 +1,12 @@
 {
   "name": "BuglonWiki",
   "short_name": "BuglonWiki",
-  "description": "Ensiklopedia terbuka — Wikipedia + Wikimedia + OpenAlex. Perangkat ringan, artikel gratis, gambar asli.",
+  "description": "Ensiklopedia bebas: artikel Wikipedia, buku gratis (Gutenberg), jurnal (OpenAlex). Tanpa iklan, tanpa akun.",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#f7f2e7",
-  "theme_color": "#f7f2e7",
-  "orientation": "portrait",
+  "background_color": "#fafaf7",
+  "theme_color": "#fafaf7",
+  "orientation": "any",
   "icons": [
     { "src": "assets/img/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
   ]
